@@ -19,7 +19,8 @@ class FreeFireAccountform(forms.ModelForm):
 
     def clean_password(self):
         password = self.cleaned_data['password']
-        if len(password) < 8:
+        if len(password) < 6:
             raise forms.ValidationError('Password too short.')
+        
         return password
         
